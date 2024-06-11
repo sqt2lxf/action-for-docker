@@ -42,7 +42,7 @@ jobs:
 
     - name: Create branch and commit Docker image
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
       run: |
         # Clean and transform the docker image name to a valid branch name
         branch_name=$(echo "${{ github.event.inputs.docker_image }}" | tr ':/. ' '-')
